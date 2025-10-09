@@ -1,5 +1,13 @@
 {
-  "extends": "@repo/typescript-config/base.json",
+  "extends": "@clife/typescript-config/react-library.json",
   "include": ["."],
-  "exclude": ["node_modules"]
+  "exclude": ["node_modules"],
+  "compilerOptions": {
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "baseUrl": ".",
+    "paths": {
+      "@clife/ui/*": ["./src/*"]
+    }
+  }
 }

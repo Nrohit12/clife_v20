@@ -11,7 +11,7 @@
     "prettier": "^3.2.5",
     "turbo": "^2.5.8"
   },
-  "name": "with-vite",
+  "name": "clife_v20",
   "packageManager": "npm@10.9.3",
   "workspaces": [
     "apps/*",
