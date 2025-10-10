@@ -13,9 +13,12 @@
   },
   "devDependencies": {
     "@clife/typescript-config": "*",
+    "@types/crypto-js": "^4.2.2",
     "typescript": "latest"
   },
   "dependencies": {
-    "@sentry/react": "^10.19.0"
+    "@sentry/react": "^10.19.0",
+    "crypto-js": "^4.2.0",
+    "js-sha256": "^0.11.1"
   }
 }
