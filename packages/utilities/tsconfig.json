@@ -1,5 +1,5 @@
 {
-    "extends": "@clife/typescript-config/base.json",
+    "extends": "@clife/typescript-config/react-library.json",
     "compilerOptions": {
         "outDir": "dist",
         "rootDir": "src"
