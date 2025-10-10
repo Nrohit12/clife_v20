@@ -1,5 +1,5 @@
 {
-  "name": "@clife/tailwind",
+  "name": "@clife/utilities",
   "type": "module",
   "scripts": {
     "dev": "tsc --watch",
@@ -14,5 +14,8 @@
   "devDependencies": {
     "@clife/typescript-config": "*",
     "typescript": "latest"
+  },
+  "dependencies": {
+    "@sentry/react": "^10.19.0"
   }
 }
