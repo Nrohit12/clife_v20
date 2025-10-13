@@ -1,20 +1,21 @@
 
 import type { ThemeJSON } from "./types"
-import {setLocalStorageItem, getLocalStorageItem} from "@clife/utils/localStorage.js"
+import { setLocalStorageItem, getLocalStorageItem } from "@clife/utils/localStorage.js"
 
-console.log("ENV", process.env.LOCAL_STORAGE_THEME_SECRET_KEY)
-const LOCAL_STORAGE_THEME_SECRET_KEY = "CLIFE_THEME_SECRET_KEY";
+const LOCAL_STORAGE_THEME_SECRET_KEY = import.meta.env.VITE_LOCAL_STORAGE_THEME_SECRET_KEY;
+
+console.log("Theme secret key:", LOCAL_STORAGE_THEME_SECRET_KEY);
 
 // HEX -> HSL string compatible with our CSS var style "h s% l%"
 function hexToHslString(hex: string): string {
-  let c = hex.replace("#","")
-  if (c.length === 3) c = c.split("").map(x=>x+x).join("")
-  const r = parseInt(c.slice(0,2),16)/255
-  const g = parseInt(c.slice(2,4),16)/255
-  const b = parseInt(c.slice(4,6),16)/255
+  let c = hex.replace("#", "")
+  if (c.length === 3) c = c.split("").map(x => x + x).join("")
+  const r = parseInt(c.slice(0, 2), 16) / 255
+  const g = parseInt(c.slice(2, 4), 16) / 255
+  const b = parseInt(c.slice(4, 6), 16) / 255
 
-  const max = Math.max(r,g,b), min = Math.min(r,g,b)
-  let h = 0, s = 0, l = (max + min)/2
+  const max = Math.max(r, g, b), min = Math.min(r, g, b)
+  let h = 0, s = 0, l = (max + min) / 2
 
   if (max !== min) {
     const d = max - min
@@ -26,7 +27,7 @@ function hexToHslString(hex: string): string {
     }
     h /= 6
   }
-  return `${Math.round(h*360)} ${Math.round(s*100)}% ${Math.round(l*100)}%`
+  return `${Math.round(h * 360)} ${Math.round(s * 100)}% ${Math.round(l * 100)}%`
 }
 
 function toHsl(value: string): string {
@@ -57,11 +58,11 @@ export function applyThemeJSON(json: ThemeJSON, opts?: { target?: HTMLElement, d
   }
 }
 
-export function saveTheme(json: ThemeJSON, storageKey:string) {
+export function saveTheme(json: ThemeJSON, storageKey: string) {
   setLocalStorageItem(storageKey, json, LOCAL_STORAGE_THEME_SECRET_KEY)
 }
 
-export function loadTheme(storageKey:string): ThemeJSON | null {
+export function loadTheme(storageKey: string): ThemeJSON | null {
   const raw = getLocalStorageItem(storageKey, LOCAL_STORAGE_THEME_SECRET_KEY)
   if (!raw) return null
   try { return raw as ThemeJSON } catch { return null }

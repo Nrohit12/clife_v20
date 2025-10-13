@@ -7,6 +7,6 @@
       "@clife/utils": ["../utils/src"]
     }
   },
-  "include": ["src"],
+  "include": ["src", "env.d.ts"],
   "exclude": ["node_modules", "dist"]
 }

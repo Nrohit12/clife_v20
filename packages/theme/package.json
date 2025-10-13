@@ -13,8 +13,5 @@
     "@clife/typescript-config": "*",
     "@clife/utils": "*",
     "typescript": "latest"
-  },
-  "dependencies": {
-    "dotenv": "^17.2.3"
   }
 }
