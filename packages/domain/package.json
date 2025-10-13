@@ -1,15 +1,12 @@
 {
-  "name": "@clife/domains",
+  "name": "@clife/domain",
   "type": "module",
   "scripts": {
     "dev": "tsc --watch",
     "build": "tsc"
   },
   "exports": {
-    ".": {
-      "types": "./src/index.ts",
-      "default": "./dist/index.js"
-    }
+    "./*": "./src/*"
   },
   "devDependencies": {
     "@clife/typescript-config": "*",
