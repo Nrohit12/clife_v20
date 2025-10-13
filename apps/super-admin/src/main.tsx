@@ -6,7 +6,7 @@ import { ThemeProvider } from '@clife/theme/ThemeProvider'
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <ThemeProvider>
+    <ThemeProvider storageKey={"clife_super_admin_theme"} >
       <App />
     </ThemeProvider>
   </StrictMode>,
