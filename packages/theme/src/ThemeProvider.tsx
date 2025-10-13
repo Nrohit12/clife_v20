@@ -18,6 +18,7 @@ type ThemeContextType = {
   theme: ThemeJSON | null
   mode: "light" | "dark"
   systemMode: "light" | "dark"
+
   setThemeFromAPI: (url: string, init?: RequestInit) => Promise<void>
   setThemeLocal: (json: ThemeJSON) => void
   setMode: (mode: "light" | "dark" | "system") => void
@@ -37,11 +38,13 @@ export function ThemeProvider({
   darkClassOn = typeof document !== "undefined"
     ? document.documentElement
     : undefined,
+  storageKey,
 }: {
   children: React.ReactNode
-  darkClassOn?: HTMLElement
+  darkClassOn?: HTMLElement,
+  storageKey: string
 }) {
-  const [theme, setTheme] = useState<ThemeJSON | null>(() => loadTheme())
+  const [theme, setTheme] = useState<ThemeJSON | null>(() => loadTheme(storageKey ?? "clife_theme"))
   const [systemMode, setSystemMode] = useState<"light" | "dark">(() => {
     if (typeof window === "undefined") return "light"
     return window.matchMedia("(prefers-color-scheme: dark)").matches
@@ -50,7 +53,7 @@ export function ThemeProvider({
   })
 
   const [mode, setModeState] = useState<"light" | "dark" | "system">(() => {
-    return loadTheme()?.mode ?? "system"
+    return loadTheme(storageKey)?.mode ?? "system"
   })
 
   // update systemMode on change
@@ -82,7 +85,7 @@ export function ThemeProvider({
         throw new Error(`Theme fetch failed: ${res.status} ${res.statusText}`)
       const json = (await res.json()) as ThemeJSON
       applyThemeJSON(json, { darkClassOn })
-      saveTheme(json)
+      saveTheme(json, storageKey)
       setTheme(json)
       if (json.mode) setModeState(json.mode)
     },
@@ -92,7 +95,7 @@ export function ThemeProvider({
   const setThemeLocal = useCallback(
     (json: ThemeJSON) => {
       applyThemeJSON(json, { darkClassOn })
-      saveTheme(json)
+      saveTheme(json, storageKey)
       setTheme(json)
       if (json.mode) setModeState(json.mode)
     },
@@ -102,14 +105,14 @@ export function ThemeProvider({
   const setMode = useCallback(
     (newMode: "light" | "dark" | "system") => {
       setModeState(newMode)
-      const current = loadTheme()
+      const current = loadTheme(storageKey)
       const updated = {
         ...current,
         mode: newMode,
         colors: current?.colors ?? {},
       }
       applyThemeJSON(updated, { darkClassOn })
-      saveTheme(updated)
+      saveTheme(updated, storageKey)
       setTheme(updated)
     },
     [darkClassOn]

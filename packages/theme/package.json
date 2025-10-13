@@ -6,10 +6,15 @@
     "build": "tsc"
   },
   "exports": {
-    "./*": "./src/*"
+    "./*": "./src/*",
+    ".": "./src/index.ts"
   },
   "devDependencies": {
     "@clife/typescript-config": "*",
+    "@clife/utils": "*",
     "typescript": "latest"
+  },
+  "dependencies": {
+    "dotenv": "^17.2.3"
   }
 }

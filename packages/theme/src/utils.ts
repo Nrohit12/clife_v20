@@ -1,5 +1,9 @@
 
 import type { ThemeJSON } from "./types"
+import {setLocalStorageItem, getLocalStorageItem} from "@clife/utils/localStorage.js"
+
+console.log("ENV", process.env.LOCAL_STORAGE_THEME_SECRET_KEY)
+const LOCAL_STORAGE_THEME_SECRET_KEY = "CLIFE_THEME_SECRET_KEY";
 
 // HEX -> HSL string compatible with our CSS var style "h s% l%"
 function hexToHslString(hex: string): string {
@@ -53,14 +57,12 @@ export function applyThemeJSON(json: ThemeJSON, opts?: { target?: HTMLElement, d
   }
 }
 
-export const THEME_STORAGE_KEY = "clife_theme_json"
-
-export function saveTheme(json: ThemeJSON) {
-  localStorage.setItem(THEME_STORAGE_KEY, JSON.stringify(json))
+export function saveTheme(json: ThemeJSON, storageKey:string) {
+  setLocalStorageItem(storageKey, json, LOCAL_STORAGE_THEME_SECRET_KEY)
 }
 
-export function loadTheme(): ThemeJSON | null {
-  const raw = localStorage.getItem(THEME_STORAGE_KEY)
+export function loadTheme(storageKey:string): ThemeJSON | null {
+  const raw = getLocalStorageItem(storageKey, LOCAL_STORAGE_THEME_SECRET_KEY)
   if (!raw) return null
-  try { return JSON.parse(raw) as ThemeJSON } catch { return null }
+  try { return raw as ThemeJSON } catch { return null }
 }

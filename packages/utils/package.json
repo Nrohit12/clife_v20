@@ -1,5 +1,5 @@
 {
-  "name": "@clife/utilities",
+  "name": "@clife/utils",
   "type": "module",
   "scripts": {
     "dev": "tsc --watch",

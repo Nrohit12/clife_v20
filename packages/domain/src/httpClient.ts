@@ -14,7 +14,6 @@ type ErrorCallbacks = {
   on401?: (error: AxiosError) => void;
   on403?: (error: AxiosError) => void;
   onRefreshTokenError?: (error: AxiosError) => void;
-  onAuthError?: (error: AxiosError) => void;
 };
 
 const createHttpClient = (
@@ -52,9 +51,10 @@ const createHttpClient = (
     async function (error: AxiosError) {
       const { response, config } = error;
 
-      if (response) {
-        errorCallbacks.onRefreshTokenError?.(error);
-      }
+      // handlle refresh token logic here
+      // if (response) {
+      //   errorCallbacks.onRefreshTokenError?.(error);
+      // }
 
       if (response && response.status === 401) {
         errorCallbacks.on401?.(error);

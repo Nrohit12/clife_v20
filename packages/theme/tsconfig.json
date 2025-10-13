@@ -2,7 +2,10 @@
   "extends": "@clife/typescript-config/react-library.json",
   "compilerOptions": {
     "outDir": "dist",
-    "rootDir": "src"
+    "rootDir": "src",
+    "paths": {
+      "@clife/utils": ["../utils/src"]
+    }
   },
   "include": ["src"],
   "exclude": ["node_modules", "dist"]
