@@ -14,3 +14,21 @@ package-lock.json
 
 
 txt
+
+
+# Build outputs
+**/dist/
+**/build/
+**/.turbo/
+*.js
+*.d.ts
+*.d.ts.map
+
+# But keep config files
+!*.config.js
+!.*.js
+
+# Or more specifically in your packages
+packages/*/src/**/*.js
+packages/*/src/**/*.d.ts
+packages/*/src/**/*.d.ts.map
