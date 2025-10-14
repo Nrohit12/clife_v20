@@ -8,7 +8,6 @@ export function ThemeToggle() {
 
   return (
     <Button
-      variant="ghost"
       size="icon"
       aria-label="Toggle theme"
       onClick={() =>

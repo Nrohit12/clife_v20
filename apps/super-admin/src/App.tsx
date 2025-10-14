@@ -12,7 +12,7 @@ function App() {
 
       </div>
       <h1 className="text-xl font-extrabold mb-4">Vite + React</h1>
-      <ThemeToggle />
+      <div className='flex m-2'> <ThemeToggle /></div>
       <div className="rounded-xl shadow-md px-8 py-6 mb-6 flex flex-col items-center">
         <p className=" mb-2">
           Edit <code className="px-1 rounded text-sm">src/App.tsx</code> and save to test HMR
