@@ -19,7 +19,8 @@
       "@clife/utils/*": ["../../packages/utils/src/*"],
       "@clife/hooks/*": ["../../packages/hooks/src/*"],
       "@clife/domain/*": ["../../packages/domain/src/*"],
-      "@clife/theme/*": ["../../packages/theme/src/*"]
+      "@clife/theme/*": ["../../packages/theme/src/*"],
+      "@clife/rbac/*": ["../../packages/rbac/src/*"]
     }
     
   },
