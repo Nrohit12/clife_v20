@@ -39,6 +39,9 @@ export const AccessControlContext = createContext<AccessControlContextType | nul
 //replace `any` with user type when available
 export const AccessControlProvider = ({ children, user }: { children: ReactNode, user: any }) => {
 
+
+  console.log("AccessControlProvider user:", user);
+
   // ---- Bitmask-based checks ----
   const hasPermission = (perm: keyof typeof PERMISSIONS) => {
     if (!user) return false;

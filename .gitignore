@@ -30,5 +30,5 @@ txt
 
 # Or more specifically in your packages
 packages/*/src/**/*.js
-packages/*/src/**/*.d.ts
+# packages/*/src/**/*.d.ts
 packages/*/src/**/*.d.ts.map
