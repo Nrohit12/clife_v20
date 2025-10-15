@@ -2,7 +2,6 @@ export type FeatureFlags = {
   [key: string]: boolean;
 };
 
-
 export type BitType = {
   [key: string]: number;
 };

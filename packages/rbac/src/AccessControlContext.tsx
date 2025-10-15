@@ -1,8 +1,4 @@
-import {
-  createContext,
-  useContext,
-  type ReactNode,
-} from "react";
+import { createContext, useContext, type ReactNode } from "react";
 import {
   FEATURES,
   PERMISSIONS,
@@ -34,14 +30,17 @@ const hasBit = (mask: number, index: number) => (mask & bit(index)) !== 0;
 //     hasBit(mask, map[k as string])
 //   );
 
-export const AccessControlContext = createContext<AccessControlContextType | null>(null);
+export const AccessControlContext =
+  createContext<AccessControlContextType | null>(null);
 
 //replace `any` with user type when available
-export const AccessControlProvider = ({ children, user }: { children: ReactNode, user: any }) => {
-
-
-  console.log("AccessControlProvider user:", user);
-
+export const AccessControlProvider = ({
+  children,
+  user,
+}: {
+  children: ReactNode;
+  user: any;
+}) => {
   // ---- Bitmask-based checks ----
   const hasPermission = (perm: keyof typeof PERMISSIONS) => {
     if (!user) return false;
@@ -65,7 +64,9 @@ export const AccessControlProvider = ({ children, user }: { children: ReactNode,
 
   const hasAnyPermission = (perms: (keyof typeof PERMISSIONS)[]) => {
     if (!user) return false;
-    return perms.some((perm) => hasBit(user.permissionsMask, PERMISSIONS[perm]));
+    return perms.some((perm) =>
+      hasBit(user.permissionsMask, PERMISSIONS[perm])
+    );
   };
 
   const value: AccessControlContextType = {
@@ -73,15 +74,22 @@ export const AccessControlProvider = ({ children, user }: { children: ReactNode,
     hasRole,
     hasFeature,
     hasAnyRole,
-    hasAnyPermission
+    hasAnyPermission,
   };
 
-  return <AccessControlContext.Provider value={value}>{children}</AccessControlContext.Provider>;
+  return (
+    <AccessControlContext.Provider value={value}>
+      {children}
+    </AccessControlContext.Provider>
+  );
 };
 
 // eslint-disable-next-line react-refresh/only-export-components
 export const useAccessControl = () => {
   const ctx = useContext(AccessControlContext);
-  if (!ctx) throw new Error("useAccessControl must be used within AccessControlProvider");
+  if (!ctx)
+    throw new Error(
+      "useAccessControl must be used within AccessControlProvider"
+    );
   return ctx;
 };

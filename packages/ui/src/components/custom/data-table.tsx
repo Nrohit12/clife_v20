@@ -23,7 +23,7 @@ interface DataTableProps<TData, TValue> {
   className?: string;
 }
 
-export function DataTable<TData, TValue>({
+function DataTable<TData, TValue>({
   columns,
   data,
   renderSubComponent,
@@ -102,3 +102,5 @@ export function DataTable<TData, TValue>({
     </div>
   );
 }
+
+export default DataTable;
