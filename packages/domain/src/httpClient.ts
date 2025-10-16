@@ -6,10 +6,6 @@ import axios, {
   InternalAxiosRequestConfig,
 } from "axios";
 
-interface IErrorResponse {
-  message?: string;
-}
-
 type ErrorCallbacks = {
   on401?: (error: AxiosError) => void;
   on403?: (error: AxiosError) => void;
@@ -49,7 +45,7 @@ const createHttpClient = (
       return response;
     },
     async function (error: AxiosError) {
-      const { response, config } = error;
+      const { response } = error;
 
       // handlle refresh token logic here
       // if (response) {

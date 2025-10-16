@@ -25,21 +25,11 @@ export default function TenantCreationSidebar() {
   const { location } = useRouterState();
   const pathname = location.pathname;
 
-  const [collapsed, setCollapsed] = React.useState(false);
-
-  const data = {
-    user: {
-      name: "Avdhoot Patil",
-      // email: "nitesh@example.com",
-      // avatar: "https://i.pravatar.cc/150?img=3",
-    },
-  };
 
   return (
     <aside
       className={cn(
-        "border-r bg-bg-n-98 dark:bg-gray-800 dark:border-gray-700 transition-all duration-300 flex flex-col",
-        collapsed ? "w-16" : "w-56"
+        "border-r bg-bg-n-98 dark:bg-gray-800 dark:border-gray-700 transition-all duration-300 flex flex-col w-56"
       )}
     >
       {/* Inner container full height */}
@@ -64,7 +54,6 @@ export default function TenantCreationSidebar() {
                     icon={<Icon className="h-5 w-5" />}
                     active={active}
                     href={route}
-                    collapsed={collapsed}
                   >
                     {label}
                   </SidebarItem>

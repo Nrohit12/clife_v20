@@ -47,9 +47,10 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
         }
     }, []);
 
-    const login = (username: string, password: string) => {
+    
+    const login = (_username: string, _password: string) => {
         // TODO - replace this with an API call
-        const passwordHash = hashPasswordSync(password);
+        // const passwordHash = hashPasswordSync(password);
         const foundUser = mockUser
 
         if (foundUser) {
