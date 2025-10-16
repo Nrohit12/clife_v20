@@ -59,9 +59,8 @@ export function applyThemeJSON(
   Object.entries(json.colors ?? {}).forEach(([key, val]) => {
     if (!val) return;
     const hslValue = toHsl(val);
-    console.log(" hsl value", key, hslValue);
 
-    root.style.setProperty(`--${key}`, val);
+    root.style.setProperty(`--${key}`, hslValue);
   });
 
   if (json.radius) {

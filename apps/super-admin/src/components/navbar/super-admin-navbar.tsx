@@ -34,7 +34,7 @@ export default function SuperAdminNavbar({
 
   return (
     <nav
-      className="w-full border-b bg-n-98 backdrop-blur dark:bg-gray-800 h-14"
+      className="bg-primary-50 w-full border-b bg-primary-50 backdrop-blur dark:bg-gray-800 h-14"
       {...props}
     >
       <div className="flex  items-center px-6 h-full">

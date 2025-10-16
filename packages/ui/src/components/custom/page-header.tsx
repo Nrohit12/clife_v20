@@ -2,7 +2,7 @@ interface PageHeaderProps {
   title: string;
 }
 
-export default function PageHeader({ title }: PageHeaderProps) {
+const PageHeader = ({ title }: PageHeaderProps) => {
   return (
     <div
       style={{
@@ -16,4 +16,6 @@ export default function PageHeader({ title }: PageHeaderProps) {
       {title}
     </div>
   );
-}
+};
+
+export default PageHeader;

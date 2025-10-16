@@ -9,8 +9,9 @@ const defaultTheme: ThemeJSON = {
   name: "Default",
   mode: "light",
   colors: {
-    background: "#FFFFFF",
+    background: "#FAF7F0",
     // "bg-n-98": "#FAF7F0",
+    "bg-n-98": "#9D310A",
 
     foreground: "oklch(0.145 0 0)",
     card: "oklch(1 0 0)",

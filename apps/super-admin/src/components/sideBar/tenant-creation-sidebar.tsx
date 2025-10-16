@@ -38,7 +38,7 @@ export default function TenantCreationSidebar() {
   return (
     <aside
       className={cn(
-        "border-r bg-n-98 dark:bg-gray-800 dark:border-gray-700 transition-all duration-300 flex flex-col",
+        "border-r bg-bg-n-98 dark:bg-gray-800 dark:border-gray-700 transition-all duration-300 flex flex-col",
         collapsed ? "w-16" : "w-56"
       )}
     >

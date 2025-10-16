@@ -141,8 +141,6 @@ export function ThemeProvider({
     [theme, resolvedMode, systemMode, setThemeFromAPI, setThemeLocal, setMode]
   );
 
-  console.log(value);
-
   return (
     <ThemeContext.Provider value={value}>{children}</ThemeContext.Provider>
   );
