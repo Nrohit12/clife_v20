@@ -31,36 +31,28 @@ const ThemeContext = createContext<ThemeContextType>({
 
 export function ThemeProvider({
   children,
-  darkClassOn = typeof document !== "undefined"
-    ? document.documentElement
-    : undefined,
-  storageKey,
+  darkClassOn = typeof document !== "undefined" ? document.documentElement : undefined,
+  storageKey = "clife_theme",
   initialColors,
 }: {
   children: React.ReactNode;
   darkClassOn?: HTMLElement;
-  storageKey: string;
+  storageKey?: string;
   initialColors?: ThemeJSON["colors"];
 }) {
+  const initiallyStored = loadTheme(storageKey);
   const [theme, setTheme] = useState<ThemeJSON | null>(() => {
-    const loaded = loadTheme(storageKey ?? "clife_theme");
-    // If no stored theme but initialColors provided, use them
-    if (!loaded && initialColors) {
-      return { colors: initialColors, mode: "light" };
-    }
-    return loaded;
+    if (!initiallyStored && initialColors) return { colors: initialColors, mode: "light" };
+    return initiallyStored;
   });
 
   const [systemMode, setSystemMode] = useState<"light" | "dark">(() => {
     if (typeof window === "undefined") return "light";
-
-    return window.matchMedia("(prefers-color-scheme: dark)").matches
-      ? "dark"
-      : "light";
+    return window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
   });
 
   const [mode, setModeState] = useState<"light" | "dark" | "system">(() => {
-    return loadTheme(storageKey)?.mode ?? "light";
+    return initiallyStored?.mode ?? "light";
   });
 
   // update systemMode on change
@@ -79,15 +71,9 @@ export function ThemeProvider({
   useEffect(() => {
     const el = darkClassOn ?? document.documentElement;
     el.classList.toggle("dark", resolvedMode === "dark");
-  }, [resolvedMode, darkClassOn]);
+    if (theme) applyThemeJSON({ ...theme, mode }, { darkClassOn });
+  }, [resolvedMode, theme, mode, darkClassOn]);
 
-  useEffect(() => {
-    if (theme) {
-      applyThemeJSON({ ...theme, mode }, { darkClassOn });
-    }
-  }, [theme, mode, darkClassOn]);
-
-  //not used
   const setThemeFromAPI = useCallback(
     async (url: string, init?: RequestInit) => {
       const res = await fetch(url, init);
@@ -102,7 +88,6 @@ export function ThemeProvider({
     [darkClassOn]
   );
 
-  //not used
   const setThemeLocal = useCallback(
     (json: ThemeJSON) => {
       applyThemeJSON(json, { darkClassOn });
@@ -116,17 +101,12 @@ export function ThemeProvider({
   const setMode = useCallback(
     (newMode: "light" | "dark" | "system") => {
       setModeState(newMode);
-      const current = loadTheme(storageKey);
-      const updated = {
-        ...current,
-        mode: newMode,
-        colors: current?.colors ?? {},
-      };
+      const updated = { ...(theme ?? {}), mode: newMode, colors: theme?.colors ?? {} } as ThemeJSON;
       applyThemeJSON(updated, { darkClassOn });
       saveTheme(updated, storageKey);
       setTheme(updated);
     },
-    [darkClassOn]
+    [darkClassOn, theme]
   );
 
   const value = useMemo<ThemeContextType>(

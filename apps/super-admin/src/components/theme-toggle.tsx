@@ -15,7 +15,8 @@ export function ThemeToggle() {
           mode === "dark" ? "light" : "dark"
         )
       }
-      className="cursor-pointer"
+      className="cursor-pointer p-2"
+      variant="secondary"
     >
       {mode === "dark" ? (
         <Moon className="h-4 w-4" />

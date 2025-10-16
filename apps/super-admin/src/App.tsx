@@ -1,24 +1,16 @@
-// import { AccessControlProvider } from "@clife/rbac/AccessControlContext";
-import { ThemeProvider } from "@clife/theme/ThemeProvider";
-import { Provider } from "react-redux";
+import { AccessControlProvider } from "@clife/rbac/AccessControlContext";
 import { Toaster } from "sonner";
-import "./App.css";
-// import { useAuth } from "./hooks/useAuthContext";
 import { RouterApp } from "./routes/router";
-import { store } from "./store";
+import { useSelector } from "react-redux";
 
 function App() {
-  // const { user } = useAuth();
+  const { user } = useSelector((state: any) => state.auth);
 
   return (
-    // <AccessControlProvider user={user}>
-    <Provider store={store}>
-      <ThemeProvider storageKey={"clife-super-admin-theme"}>
-        <Toaster />
-        <RouterApp />
-      </ThemeProvider>
-    </Provider>
-    // </AccessControlProvider>
+    <AccessControlProvider user={user}>
+      <Toaster />
+      <RouterApp />
+    </AccessControlProvider>
   );
 }
 

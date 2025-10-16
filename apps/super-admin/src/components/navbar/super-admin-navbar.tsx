@@ -1,14 +1,12 @@
-import { ThemeToggle } from "@/components/theme-toggle";
-import { Button } from "@clife/ui/components/button";
-import {
-  NavigationMenu,
-  NavigationMenuItem,
-  NavigationMenuLink,
-  NavigationMenuList,
-  navigationMenuTriggerStyle,
-} from "@clife/ui/components/navigation-menu";
 import { useLocation } from "@tanstack/react-router";
-import { LogIn, User } from "lucide-react";
+import { Bell, Search } from "lucide-react";
+import { Button } from "@clife/ui/components/button";
+import { Separator } from "@clife/ui/components/separator";
+import {
+  Avatar,
+  AvatarFallback,
+  AvatarImage,
+} from "@clife/ui/components/avatar";
 
 type User = {
   name: string;
@@ -22,74 +20,75 @@ export default function SuperAdminNavbar({
 }: Readonly<React.HTMLProps<HTMLElement> & { user?: User }>) {
   const location = useLocation();
 
-  const handleLogin = (e?: React.MouseEvent) => {
-    e?.preventDefault();
-  };
-
-  const pageTitle =
-    location.pathname === "/"
-      ? "Home"
-      : location.pathname.slice(1).charAt(0).toUpperCase() +
-        location.pathname.slice(2).replace(/-/g, " ");
+  // simple breadcrumb based on pathname
+  const segments = location.pathname.split("/").filter(Boolean);
+  const lastSegment = segments.length > 0 ? segments[segments.length - 1] : "";
+  const breadcrumb = [
+    "Home",
+    lastSegment
+      ? lastSegment
+          .replace(/-/g, " ")
+          .split(" ")
+          .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+          .join(" ")
+      : ""
+  ]
+    .filter(Boolean)
+    .join(" / ");
 
   return (
     <nav
-      className="bg-primary-50 w-full border-b bg-primary-50 backdrop-blur dark:bg-gray-800 h-14"
+      className="w-full h-14 border-b bg-background/80 backdrop-blur"
       {...props}
     >
-      <div className="flex  items-center px-6 h-full">
-        {/* LEFT: Page Title */}
-        {/* Add breadcrumbs here */}
-        <h2 className="text-lg font-semibold">{pageTitle}</h2>
-        {/* RIGHT: nav + user + theme */}
-        <div className="ml-auto flex items-center gap-4">
-          <NavigationMenu className="max-w-none">
-            <NavigationMenuList>
-              {!user ? (
-                <NavigationMenuItem>
-                  <NavigationMenuLink
-                    asChild
-                    className={navigationMenuTriggerStyle()}
-                  >
-                    <Button
-                      size="sm"
-                      variant="outline"
-                      onClick={handleLogin}
-                      className="flex items-center gap-2"
-                    >
-                      <LogIn className="h-4 w-4" />
-                      Login
-                    </Button>
-                  </NavigationMenuLink>
-                </NavigationMenuItem>
-              ) : (
-                <NavigationMenuItem>
-                  <NavigationMenuLink
-                    asChild
-                    className={navigationMenuTriggerStyle()}
-                  >
-                    <div className="flex flex-row items-center gap-2 px-2 py-1">
-                      {user.avatar ? (
-                        <img
-                          src={user.avatar}
-                          alt={user.name}
-                          className="h-7 w-7 rounded-full border"
-                        />
-                      ) : (
-                        <User className="h-5 w-5" />
-                      )}
-                      <span className="text-sm font-medium text-gray-800 dark:text-gray-200">
-                        {user.name}
-                      </span>
-                    </div>
-                  </NavigationMenuLink>
-                </NavigationMenuItem>
-              )}
-            </NavigationMenuList>
-          </NavigationMenu>
+      <div className="flex items-center h-full px-6">
+        {/* LEFT: Breadcrumbs */}
+        <h2 className="text-base font-medium text-muted-foreground">{breadcrumb}</h2>
 
-          {/* Theme Toggle */}
-          <ThemeToggle />
+        {/* RIGHT */}
+        <div className="ml-auto flex items-center gap-4">
+          {/* Search icon in circle */}
+          <Button
+            type="button"
+            aria-label="Search"
+            variant="outline"
+            size="icon"
+            className="rounded-full h-10 w-10 bg-card text-foreground/70 hover:bg-muted/50"
+          >
+            <Search className="h-5 w-5 text-primary-40" />
+          </Button>
+
+          {/* Bell with red dot in circle */}
+          <Button
+            type="button"
+            aria-label="Notifications"
+            variant="outline"
+            size="icon"
+            className="relative rounded-full h-10 w-10 bg-card text-foreground/70 hover:bg-muted/50"
+          >
+            <Bell className="h-5 w-5 text-primary-40" />
+            <span className="absolute right-2 top-2 h-2.5 w-2.5 rounded-full bg-error-40" />
+          </Button>
+
+          {/* Divider */}
+          <Separator orientation="vertical" className="h-6" />
+
+          {/* User pill */}
+          <div className="flex items-center gap-3">
+            <Avatar className="h-9 w-9">
+              {/* <AvatarImage src={user?.avatar} alt={user?.name ?? "User"} /> */}
+              <AvatarFallback className="bg-primary-40 w-full h-full flex items-center justify-center text-white">
+                {(user?.name?.split(" ")
+                  .map((n) => n[0])
+                  .slice(0, 2)
+                  .join("") || "JD").toUpperCase()}
+              </AvatarFallback>
+            </Avatar>
+            <div className="leading-tight">
+              <div className="text-sm font-semibold text-foreground">{user?.name || "John Doe"}</div>
+              <div className="text-xs text-muted-foreground">Super Admin</div>
+            </div>
+          </div>
         </div>
       </div>
     </nav>
