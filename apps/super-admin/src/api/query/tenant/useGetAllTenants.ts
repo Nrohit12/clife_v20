@@ -1,5 +1,5 @@
 import tenantEndpoints from "@/api/endpoints/tenant";
-import { TenantsResponse } from "@/types/tenant";
+import { TenantsResponse } from "@/types/tenant.types";
 import { useDispatch } from "react-redux";
 import { setAllTenants, setTenants } from "@/store/slice";
 import Result from "@tesseract/domain/result";

@@ -1,6 +1,6 @@
 import tenantAdminEndpoints from "@/api/endpoints/tenant-admin";
 import { queryKeys } from "@/api/query/queryKeys";
-import { TenantsResponse } from "@/types/tenant";
+import { TenantsResponse } from "@/types/tenant.types";
 import handleApiError, { ApiError } from "@tesseract/domain/handleApiError";
 import Result from "@tesseract/domain/result";
 import { useQuery } from "@tanstack/react-query";

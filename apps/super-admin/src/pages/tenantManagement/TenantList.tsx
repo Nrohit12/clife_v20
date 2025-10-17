@@ -44,7 +44,7 @@ function TenantList() {
         accessorKey: "name",
         header: "Name",
         cell: ({ row }) => (
-          <button className="text-primary hover:underline" type="button">
+          <button className="text-primary-40 hover:underline" type="button">
             {row.original.name}
           </button>
         ),

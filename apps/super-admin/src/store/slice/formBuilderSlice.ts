@@ -2,7 +2,7 @@ import {
   formBuilderInitialState,
   InputType,
   MultiSelectTypes,
-} from "@/types/formBuilder";
+} from "@/types/formBuilder.types";
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState: formBuilderInitialState = {

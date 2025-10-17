@@ -1,4 +1,4 @@
-import { CreateTenant } from "@/types/tenant";
+import { CreateTenant } from "@/types/tenant.types";
 import { setUrlParams } from "@tesseract/domain/helpers";
 import { endpoints } from "@/api";
 import createHttpClient from "@tesseract/domain/httpClient";

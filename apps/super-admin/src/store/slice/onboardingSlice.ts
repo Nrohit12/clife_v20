@@ -3,7 +3,7 @@ import {
   OnboardingState,
   OnboardingQuestion,
   OnboardingStats,
-} from "@/types/OnboardingQuestion";
+} from "@/types/onboardingQuestion.types";
 
 const initialState: OnboardingState = {
   questions: [],

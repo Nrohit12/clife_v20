@@ -1,4 +1,4 @@
-import { Tenant } from "@/types/tenant";
+import { Tenant } from "@/types/tenant.types";
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 export interface TenantState {

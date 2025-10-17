@@ -1,4 +1,4 @@
-import { BiomarkerConfig, ScoreEngineState, Tier } from "@/types/ScoreEngine";
+import { BiomarkerConfig, ScoreEngineState, Tier } from "@/types/scoreEngine.types";
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 const initialState: ScoreEngineState = {
