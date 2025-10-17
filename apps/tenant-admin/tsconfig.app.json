@@ -1,5 +1,5 @@
 {
-  "extends": "@clife/typescript-config/vite.json",
+  "extends": "@tesseract/typescript-config/vite.json",
   "include": [
     "src"
   ],
@@ -10,10 +10,10 @@
       "@/*": [
         "./src/*"
       ],
-      "@clife/typescript-config/*": [
+      "@tesseract/typescript-config/*": [
         "../../packages/typescript-config/*"
       ],
-      "@clife/ui/*": [
+      "@tesseract/ui/*": [
         "../../packages/ui/src/*"
       ],
     },

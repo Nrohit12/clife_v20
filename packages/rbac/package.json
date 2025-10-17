@@ -1,5 +1,5 @@
 {
-  "name": "@clife/rbac",
+  "name": "@tesseract/rbac",
   "type": "module",
   "scripts": {
     "dev": "tsc --watch",
@@ -10,9 +10,9 @@
     ".": "./src/index.ts"
   },
   "devDependencies": {
-    "@clife/typescript-config": "*",
-    "@clife/utils": "*",
-    "@clife/ui": "*",
+    "@tesseract/typescript-config": "*",
+    "@tesseract/utils": "*",
+    "@tesseract/ui": "*",
     "typescript": "latest"
   }
 }

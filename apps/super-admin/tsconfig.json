@@ -1,5 +1,5 @@
 {
-  "extends": "@clife/typescript-config/react-library.json",
+  "extends": "@tesseract/typescript-config/react-library.json",
   "files": [],
   "references": [
     {

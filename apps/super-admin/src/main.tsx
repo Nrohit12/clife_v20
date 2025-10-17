@@ -1,4 +1,4 @@
-import { ThemeProvider } from "@clife/theme/ThemeProvider";
+import { ThemeProvider } from "@tesseract/theme/ThemeProvider";
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import App from "@/App";

@@ -2,7 +2,7 @@ import type { ThemeJSON } from "./types";
 import {
   setLocalStorageItem,
   getLocalStorageItem,
-} from "@clife/utils/localStorage.js";
+} from "@tesseract/utils/localStorage.js";
 
 const LOCAL_STORAGE_THEME_SECRET_KEY = import.meta.env
   .VITE_LOCAL_STORAGE_THEME_SECRET_KEY;

@@ -3,7 +3,7 @@ import { Network, Settings, type LucideIcon } from "lucide-react";
 import {
   SidebarFooter,
   SidebarProvider,
-} from "@clife/ui/components/custom/app-sidebar";
+} from "@tesseract/ui/components/custom/app-sidebar";
 // import { NavUser } from "./nav-user";
 import { cn } from "@/lib/utils";
 import * as React from "react";

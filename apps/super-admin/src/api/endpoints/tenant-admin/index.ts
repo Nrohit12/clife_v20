@@ -1,7 +1,7 @@
 import { CreateTenant } from "@/types/tenant";
-import { setUrlParams } from "@clife/domain/helpers";
+import { setUrlParams } from "@tesseract/domain/helpers";
 import { endpoints } from "@/api";
-import createHttpClient from "@clife/domain/httpClient";
+import createHttpClient from "@tesseract/domain/httpClient";
 
 const { TENANT } = endpoints;
 

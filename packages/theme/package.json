@@ -1,5 +1,5 @@
 {
-  "name": "@clife/theme",
+  "name": "@tesseract/theme",
   "type": "module",
   "scripts": {
     "dev": "tsc --watch",
@@ -10,8 +10,8 @@
     ".": "./src/index.ts"
   },
   "devDependencies": {
-    "@clife/typescript-config": "*",
-    "@clife/utils": "*",
+    "@tesseract/typescript-config": "*",
+    "@tesseract/utils": "*",
     "typescript": "latest"
   }
 }

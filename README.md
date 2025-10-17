@@ -17,9 +17,9 @@ This Turborepo includes the following packages and apps:
 ### Apps and Packages
 
 - `docs`: a vanilla [vite](https://vitejs.dev) ts app
-- `@clife/ui`: a stub component & utility library shared by both 
-- `@clife/eslint-config`: shared `eslint` configurations
-- `@clife/typescript-config`: `tsconfig.json`s used throughout the monorepo
+- `@tesseract/ui`: a stub component & utility library shared by both 
+- `@tesseract/eslint-config`: shared `eslint` configurations
+- `@tesseract/typescript-config`: `tsconfig.json`s used throughout the monorepo
 
 Each package and app is 100% [TypeScript](https://www.typescriptlang.org/).
 

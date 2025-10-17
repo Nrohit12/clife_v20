@@ -1,5 +1,5 @@
 {
-  "extends": "@clife/typescript-config/react-library.json",
+  "extends": "@tesseract/typescript-config/react-library.json",
   "include": ["."],
   "exclude": ["node_modules"],
   "compilerOptions": {
@@ -7,7 +7,7 @@
     "moduleResolution": "bundler",
     "baseUrl": ".",
     "paths": {
-      "@clife/ui/*": ["./src/*"]
+      "@tesseract/ui/*": ["./src/*"]
     }
   }
 }

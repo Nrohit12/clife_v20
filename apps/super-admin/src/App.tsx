@@ -1,4 +1,4 @@
-import { AccessControlProvider } from "@clife/rbac/AccessControlContext";
+import { AccessControlProvider } from "@tesseract/rbac/AccessControlContext";
 import { Toaster } from "sonner";
 import { RouterApp } from "./routes/router";
 import { useSelector } from "react-redux";

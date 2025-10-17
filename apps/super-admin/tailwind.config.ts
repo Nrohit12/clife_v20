@@ -1,5 +1,5 @@
 import type { Config } from "tailwindcss"
-import base from "@clife/theme/tailwind-base.ts"
+import base from "@tesseract/theme/tailwind-base.ts"
 
 export default {
     ...base,

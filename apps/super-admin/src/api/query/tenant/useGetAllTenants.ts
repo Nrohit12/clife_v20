@@ -2,10 +2,10 @@ import tenantEndpoints from "@/api/endpoints/tenant";
 import { TenantsResponse } from "@/types/tenant";
 import { useDispatch } from "react-redux";
 import { setAllTenants, setTenants } from "@/store/slice";
-import Result from "@clife/domain/result";
+import Result from "@tesseract/domain/result";
 import { useQuery } from "@tanstack/react-query";
-import handleApiError from "@clife/domain/handleApiError";
-import { ApiError } from "@clife/domain/handleApiError";
+import handleApiError from "@tesseract/domain/handleApiError";
+import { ApiError } from "@tesseract/domain/handleApiError";
 import { queryKeys } from "@/api/query/queryKeys";
 import { QUERY_BASE_OPTS } from "..";
 

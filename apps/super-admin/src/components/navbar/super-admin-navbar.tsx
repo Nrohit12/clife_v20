@@ -1,12 +1,11 @@
 import { useLocation } from "@tanstack/react-router";
 import { Bell, Search } from "lucide-react";
-import { Button } from "@clife/ui/components/button";
-import { Separator } from "@clife/ui/components/separator";
+import { Button } from "@tesseract/ui/components/button";
+import { Separator } from "@tesseract/ui/components/separator";
 import {
   Avatar,
   AvatarFallback,
-  AvatarImage,
-} from "@clife/ui/components/avatar";
+} from "@tesseract/ui/components/avatar";
 
 type User = {
   name: string;

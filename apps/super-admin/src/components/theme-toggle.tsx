@@ -1,6 +1,6 @@
 import { Moon, Sun } from "lucide-react";
-import { Button } from "@clife/ui/components/button";
-import { useTheme } from "@clife/theme/ThemeProvider";
+import { Button } from "@tesseract/ui/components/button";
+import { useTheme } from "@tesseract/theme/ThemeProvider";
 
 
 export function ThemeToggle() {

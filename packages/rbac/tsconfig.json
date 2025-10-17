@@ -1,11 +1,11 @@
 {
-  "extends": "@clife/typescript-config/react-library.json",
+  "extends": "@tesseract/typescript-config/react-library.json",
   "compilerOptions": {
     "outDir": "dist",
     "rootDir": "src",
     "paths": {
-      "@clife/utils": ["../utils/src"],
-      "@clife/ui": ["../ui/src"]
+      "@tesseract/utils": ["../utils/src"],
+      "@tesseract/ui": ["../ui/src"]
     }
   },
   "include": ["src", "env.d.ts"],

@@ -1,5 +1,5 @@
 {
-  "extends": "@clife/typescript-config/base.json",
+  "extends": "@tesseract/typescript-config/base.json",
   "compilerOptions": {
     "outDir": "dist",
     "rootDir": "src"

@@ -11,10 +11,10 @@
   },
   "iconLibrary": "lucide",
   "aliases": {
-    "components": "@clife/ui/components",
-    "utils": "@clife/ui/lib/utils",
-    "hooks": "@clife/ui/hooks",
-    "lib": "@clife/ui/lib",
-    "ui": "@clife/ui/components"
+    "components": "@tesseract/ui/components",
+    "utils": "@tesseract/ui/lib/utils",
+    "hooks": "@tesseract/ui/hooks",
+    "lib": "@tesseract/ui/lib",
+    "ui": "@tesseract/ui/components"
   }
 }

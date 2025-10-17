@@ -1,8 +1,8 @@
 import { useMemo, useState } from "react";
-import { Button } from "@clife/ui/components/button";
-import { Input } from "@clife/ui/components/input";
-import PageHeader from "@clife/ui/components/custom/page-header";
-import DataTable from "@clife/ui/components/custom/data-table";
+import { Button } from "@tesseract/ui/components/button";
+import { Input } from "@tesseract/ui/components/input";
+import PageHeader from "@tesseract/ui/components/custom/page-header";
+import DataTable from "@tesseract/ui/components/custom/data-table";
 import type { ColumnDef } from "@tanstack/react-table";
 import { Plus } from "lucide-react";
 

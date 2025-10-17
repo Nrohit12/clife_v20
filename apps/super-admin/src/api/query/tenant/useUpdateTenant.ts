@@ -1,6 +1,6 @@
 import tenantEndpoints from "@/api/endpoints/tenant";
-import handleApiError from "@clife/domain/handleApiError";
-import Result from "@clife/domain/result";
+import handleApiError from "@tesseract/domain/handleApiError";
+import Result from "@tesseract/domain/result";
 import { useMutation } from "@tanstack/react-query";
 
 async function updateTenant({

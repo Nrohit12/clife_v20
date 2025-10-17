@@ -13,8 +13,8 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from "@clife/ui/components/table";
-import { cn } from "@clife/ui/lib/utils";
+} from "@tesseract/ui/components/table";
+import { cn } from "@tesseract/ui/lib/utils";
 
 interface DataTableProps<TData, TValue> {
   columns: ColumnDef<TData, TValue>[];

@@ -1,4 +1,4 @@
-import { Button } from "@clife/ui/components/button";
+import { Button } from "@tesseract/ui/components/button";
 import {
   Card,
   CardContent,
@@ -6,7 +6,7 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from "@clife/ui/components/card";
+} from "@tesseract/ui/components/card";
 import { Link, useNavigate, useRouter } from "@tanstack/react-router";
 import { ArrowLeft, Home, LogIn, SearchX } from "lucide-react";
 

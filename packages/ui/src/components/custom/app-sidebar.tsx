@@ -3,24 +3,24 @@ import { cva, VariantProps } from "class-variance-authority";
 import { PanelLeftIcon } from "lucide-react";
 import * as React from "react";
 
-import { Button } from "@clife/ui/components/button";
-import { Input } from "@clife/ui/components/input";
-import { Separator } from "@clife/ui/components/separator";
+import { Button } from "@tesseract/ui/components/button";
+import { Input } from "@tesseract/ui/components/input";
+import { Separator } from "@tesseract/ui/components/separator";
 import {
   Sheet,
   SheetContent,
   SheetDescription,
   SheetHeader,
   SheetTitle,
-} from "@clife/ui/components/sheet";
-import { Skeleton } from "@clife/ui/components/skeleton";
+} from "@tesseract/ui/components/sheet";
+import { Skeleton } from "@tesseract/ui/components/skeleton";
 import {
   Tooltip,
   TooltipContent,
   TooltipProvider,
   TooltipTrigger,
-} from "@clife/ui/components/tooltip";
-import { cn } from "@clife/ui/lib/utils";
+} from "@tesseract/ui/components/tooltip";
+import { cn } from "@tesseract/ui/lib/utils";
 
 const SIDEBAR_COOKIE_NAME = "sidebar_state";
 const SIDEBAR_COOKIE_MAX_AGE = 60 * 60 * 24 * 7;

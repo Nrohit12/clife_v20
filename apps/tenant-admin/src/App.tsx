@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import './App.css'
-import { Button } from '@clife/ui/components/button'
+import { Button } from '@tesseract/ui/components/button'
 
 function App() {
   const [count, setCount] = useState(0)

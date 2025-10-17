@@ -1,5 +1,5 @@
 {
-  "name": "@clife/domain",
+  "name": "@tesseract/domain",
   "type": "module",
   "scripts": {
     "dev": "tsc --watch",
@@ -9,7 +9,7 @@
     "./*": "./src/*"
   },
   "devDependencies": {
-    "@clife/typescript-config": "*",
+    "@tesseract/typescript-config": "*",
     "typescript": "latest"
   },
   "dependencies": {

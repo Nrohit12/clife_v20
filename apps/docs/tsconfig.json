@@ -1,4 +1,4 @@
 {
-  "extends": "@clife/typescript-config/vite.json",
+  "extends": "@tesseract/typescript-config/vite.json",
   "include": ["src"]
 }

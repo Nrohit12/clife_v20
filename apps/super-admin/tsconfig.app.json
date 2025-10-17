@@ -1,5 +1,5 @@
 {
-  "extends": "@clife/typescript-config/vite.json",
+  "extends": "@tesseract/typescript-config/vite.json",
   "include": [
     "src"
   ],
@@ -10,16 +10,16 @@
       "@/*": [
         "./src/*"
       ],
-      "@clife/typescript-config/*": [
+      "@tesseract/typescript-config/*": [
         "../../packages/typescript-config/*"
       ],
-      "@clife/ui/*": [
+      "@tesseract/ui/*": [
         "../../packages/ui/src/*"
       ],
-      "@clife/utils/*": ["../../packages/utils/src/*"],
-      "@clife/domain/*": ["../../packages/domain/src/*"],
-      "@clife/theme/*": ["../../packages/theme/src/*"],
-      "@clife/rbac/*": ["../../packages/rbac/src/*"]
+      "@tesseract/utils/*": ["../../packages/utils/src/*"],
+      "@tesseract/domain/*": ["../../packages/domain/src/*"],
+      "@tesseract/theme/*": ["../../packages/theme/src/*"],
+      "@tesseract/rbac/*": ["../../packages/rbac/src/*"]
     }
   },
 }

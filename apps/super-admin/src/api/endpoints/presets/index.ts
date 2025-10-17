@@ -1,6 +1,6 @@
 import { endpoints } from "@/api";
-import { setUrlParams } from "@clife/domain/helpers";
-import createHttpClient from "@clife/domain/httpClient";
+import { setUrlParams } from "@tesseract/domain/helpers";
+import createHttpClient from "@tesseract/domain/httpClient";
 
 const { PRESETS } = endpoints;
 

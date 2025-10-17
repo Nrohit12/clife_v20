@@ -1,6 +1,6 @@
 import type { JSX } from "react";
 import { useAccessControl } from "./AccessControlContext";
-import IdleTimerContainer from "@clife/ui/components/custom/idle-timer-container";
+import IdleTimerContainer from "@tesseract/ui/components/custom/idle-timer-container";
 import { PERMISSIONS, ROLES } from "./types";
 
 export type ProtectedRouteProps = {
