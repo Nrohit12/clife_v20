@@ -1,5 +1,4 @@
 import type { Config } from "tailwindcss"
-import tailwindcssAnimate from "tailwindcss-animate"
 import { themeExtend } from "./config"
 
 const baseConfig: Config = {
@@ -7,7 +6,6 @@ const baseConfig: Config = {
   theme: {
     extend: themeExtend,
   },
-  plugins: [tailwindcssAnimate],
 }
 
 export default baseConfig
