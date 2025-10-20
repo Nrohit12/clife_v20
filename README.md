@@ -17,7 +17,7 @@ This Turborepo includes the following packages and apps:
 ### Apps and Packages
 
 - `docs`: a vanilla [vite](https://vitejs.dev) ts app
-- `@tesseract/ui`: a stub component & utility library shared by both 
+- `@tesseract/ui`: a stub component & utility library shared by both
 - `@tesseract/eslint-config`: shared `eslint` configurations
 - `@tesseract/typescript-config`: `tsconfig.json`s used throughout the monorepo
 
@@ -30,3 +30,4 @@ This Turborepo has some additional tools already setup for you:
 - [TypeScript](https://www.typescriptlang.org/) for static type checking
 - [ESLint](https://eslint.org/) for code linting
 - [Prettier](https://prettier.io) for code formatting
+  test
